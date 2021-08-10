@@ -60,12 +60,12 @@
 			children = (
 				016E662026C2804E004675C0 /* AppDelegate.swift */,
 				016E662226C2804E004675C0 /* SceneDelegate.swift */,
+				016E663426C28119004675C0 /* ScreenCaptureProtector.swift */,
 				016E662426C2804E004675C0 /* ViewController.swift */,
 				016E662626C2804E004675C0 /* Main.storyboard */,
 				016E662926C28054004675C0 /* Assets.xcassets */,
 				016E662B26C28054004675C0 /* LaunchScreen.storyboard */,
 				016E662E26C28054004675C0 /* Info.plist */,
-				016E663426C28119004675C0 /* ScreenCaptureProtector.swift */,
 			);
 			path = PreventScreenCapture;
 			sourceTree = "<group>";

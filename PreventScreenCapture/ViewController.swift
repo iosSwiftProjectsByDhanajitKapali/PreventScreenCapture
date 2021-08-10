@@ -26,12 +26,12 @@ class ViewController: UIViewController {
 }
 
 extension ViewController{
-    @objc func didTakeScreenshot() -> Void {
-        print("Screen Shot Taken")
-    }
-    
-    @objc func didDetectRecording() -> Void{
-        print("Screen Recording Started")
-    }
+//    @objc func didTakeScreenshot() -> Void {
+//        print("Screen Shot Taken")
+//    }
+//
+//    @objc func didDetectRecording() -> Void{
+//        print("Screen Recording Started")
+//    }
 }
 

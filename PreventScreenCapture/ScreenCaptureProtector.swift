@@ -1,8 +1,17 @@
+//
+//  ScreenCaptureProtector.swift
+//  PreventScreenCapture
+//
+//  Created by unthinkable-mac-0025 on 10/08/21.
+//
+
 import UIKit
 
 class ScreenCaptureProtector {
     private var warningWindow: UIWindow?
 
+    private var isScreenRecording : Bool = false
+    
     private var window: UIWindow? {
         return (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.window
     }
@@ -16,9 +25,20 @@ class ScreenCaptureProtector {
     }
 
     @objc private func didDetectRecording() {
-        DispatchQueue.main.async {
+        DispatchQueue.main.async { [self] in
             self.hideScreen()
             self.presentwarningWindow("Screen recording is not allowed in our app!")
+            
+            while(isScreenRecording){
+                if UIScreen.main.isCaptured {
+                    window?.isHidden = true
+                    isScreenRecording = true
+                } else {
+                    window?.isHidden = false
+                    isScreenRecording = false
+                }
+            }
+            self.removeWarningWindow()
         }
     }
 
@@ -38,8 +58,10 @@ class ScreenCaptureProtector {
     private func hideScreen() {
         if UIScreen.main.isCaptured {
             window?.isHidden = true
+            isScreenRecording = true
         } else {
             window?.isHidden = false
+            isScreenRecording = false
         }
     }
 

@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         
-        //Code to Prevent Screen Recording
+        //Code to Prevent Screen Capture
         screenProtecter.startPreventingRecording()
         screenProtecter.startPreventingScreenshot()
         
